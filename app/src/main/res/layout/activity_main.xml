@@ -56,8 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Login"
-            android:backgroundTint="#279AB1"/>
+            android:backgroundTint="#279AB1"
+            android:onClick="abrirPantalla"
+            android:text="Login" />
 
         <Button
             android:id="@+id/button2"
