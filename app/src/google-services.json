@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705075391017",
+    "project_id": "tindnet-58ac8",
+    "storage_bucket": "tindnet-58ac8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705075391017:android:d39c3a916652f6a79e0a38",
+        "android_client_info": {
+          "package_name": "com.example.tindernet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClW8WcA2oY9IBXdKLb_-oeuOB6ohfYnXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

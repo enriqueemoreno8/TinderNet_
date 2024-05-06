@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void abrirPantalla(View view) {
+    protected void abrirPantalla(View view) {
         // Crear un Intent para abrir la actividad de la página de login
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent); // Iniciar la actividad
