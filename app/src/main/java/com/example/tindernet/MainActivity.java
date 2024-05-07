@@ -14,12 +14,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    protected void abrirPantalla(View view) {
+    public void abrirPantalla(View view) {
         // Crear un Intent para abrir la actividad de la página de login
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent); // Iniciar la actividad
     }
 
-
+    public void abrirPantalla2(View view) {
+        // Crear un Intent para abrir la actividad de la página de login
+        Intent intent = new Intent(this, LoginActivity2.class);
+        startActivity(intent); // Iniciar la actividad
+    }
 
 }
