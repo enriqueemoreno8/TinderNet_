@@ -12,7 +12,12 @@
           "package_name": "com.example.tindernet"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "705075391017-o8jd9ciit2ao91oqp395a7p50vmkf0n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyClW8WcA2oY9IBXdKLb_-oeuOB6ohfYnXo"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705075391017-o8jd9ciit2ao91oqp395a7p50vmkf0n9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
