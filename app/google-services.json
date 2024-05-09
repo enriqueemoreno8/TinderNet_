@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "705075391017-mted1o913v1pe6t4vd658srn1jqamdl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tindernet",
+            "certificate_hash": "114136fee64c6c8a1ff6ebd75881d6133495b495"
+          }
+        },
+        {
           "client_id": "705075391017-o8jd9ciit2ao91oqp395a7p50vmkf0n9.apps.googleusercontent.com",
           "client_type": 3
         }
