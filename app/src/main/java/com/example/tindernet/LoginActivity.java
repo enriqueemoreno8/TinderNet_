@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.credentials.CustomCredential;
 
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
@@ -31,6 +32,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption;
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,6 +41,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.SignInMethodQueryResult;
 
+import java.security.SecureRandom;
+import java.util.Base64;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -47,6 +52,8 @@ public class LoginActivity extends AppCompatActivity {
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
     private GoogleSignInClient mGoogleSignInClient;
+    private Identity identity;
+    private GetGoogleIdOption googleIdOption;
 
     private static final int REQ_ONE_TAP = 2;  // Puede ser cualquier número entero único para la actividad.
     /*private boolean showOneTapUI = true;
@@ -60,6 +67,10 @@ public class LoginActivity extends AppCompatActivity {
 
         //Instanciación de FireBase
         mAuth = FirebaseAuth.getInstance();
+
+        // Inicialización de Identity
+        /*identity = Identity.getSharedInstance(this);*/
+
         // Obtención de referencias a los EditTexts
         editTextName = findViewById(R.id.editTextText3);
         editTextEmail = findViewById(R.id.editTextTextEmailAddress2);
@@ -88,6 +99,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // Crear una instancia de la solicitud de acceso con Google
+        /*googleIdOption = new GetGoogleIdOption.Builder()
+                .setFilterByAuthorizedAccounts(true)
+                .setServerClientId("705075391017-o8jd9ciit2ao91oqp395a7p50vmkf0n9.apps.googleusercontent.com")
+                .setAutoSelectEnabled(true)
+                .setNonce(generateUniqueNonce()) // Reemplaza "YourNonceStringHere" con tu nonce string
+                .build();
+
+        // Configurar el flujo de inicio de sesión con Google
+        setupGoogleSignInFlow();*/
+
 
     }
 
@@ -112,6 +134,52 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*public String generateUniqueNonce() {
+        // Generar un valor aleatorio seguro
+        SecureRandom random = new SecureRandom();
+        byte[] nonceBytes = new byte[16];
+        random.nextBytes(nonceBytes);
+
+        // Convertir el valor aleatorio a una cadena Base64
+        //Base64 es un método de codificación que convierte datos binarios en una representación de texto ASCII utilizando un conjunto de caracteres legibles (representar datos binarios).
+        String nonce = Base64.getUrlEncoder().encodeToString(nonceBytes);
+
+        return nonce;
+    }*/
+
+    /*private void setupGoogleSignInFlow() {
+        // Crear una solicitud de credencial con la opción de Google Id
+        GetCredentialRequest request = new GetCredentialRequest.Builder()
+                .addGetGoogleIdTokenCredentialRequestOptions(googleIdOption)
+                .build();
+
+        // Lanzar la solicitud de credencial en un hilo de fondo
+        Task<GetCredentialResponse> task = identity.getCredential(request);
+        task.addOnSuccessListener(this::handleSignIn)
+                .addOnFailureListener(e -> handleFailure(e));
+    }*/
+
+    /*private void handleSignIn(GetCredentialResponse result) {
+        // Manejar la credencial devuelta exitosamente
+        CustomCredential credential = result.getCredential();
+
+        if (credential instanceof GoogleIdTokenCredential) {
+            // Convertir la credencial a GoogleIdTokenCredential
+            GoogleIdTokenCredential googleCredential = GoogleIdTokenCredential.createFrom(credential.getData());
+            // Extraer el ID de GoogleIdTokenCredential y autenticar en tu servidor
+            String googleIdToken = googleCredential.getId();
+            // Aquí puedes continuar con la autenticación en tu servidor
+        } else {
+            // Manejar otros tipos de credenciales
+            Log.e(TAG, "Unexpected type of credential");
+        }
+    }*/
+
+    /*private void handleFailure(Exception e) {
+        // Manejar cualquier error de solicitud de credencial
+        Log.e(TAG, "Error fetching credential: " + e.getMessage());
+    }*/
 
     private void createUserWithEmailAndPassword(String email, String password) {
         // Verificar si la contraseña cumple con los requisitos

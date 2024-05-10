@@ -1,10 +1,18 @@
 package com.example.tindernet;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.UnderlineSpan;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -42,6 +50,31 @@ public class LoginActivity2 extends AppCompatActivity {
                 signInWithEmailAndPassword(email, password);
             }
         });
+
+        TextView textViewForgotPassword = findViewById(R.id.textView8);
+
+        textViewForgotPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Cambiar el color del texto a gris oscuro cuando se toca el TextView
+                        textViewForgotPassword.setTextColor(getResources().getColor(R.color.light_blue));
+                        break;
+                }
+                // Devolver false para permitir que otros Listeners manejen el evento
+                return false;
+            }
+        });
+
+        textViewForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar una nueva actividad que muestre la página de restablecimiento de contraseña
+                Intent intent = new Intent(LoginActivity2.this, ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void signInWithEmailAndPassword(String email, String password) {
@@ -61,9 +94,10 @@ public class LoginActivity2 extends AppCompatActivity {
                                 mAuth.signOut(); // Cerrar sesión porque el correo electrónico no ha sido verificado
                                 Toast.makeText(LoginActivity2.this, "Por favor, verifica tu correo electrónico para iniciar sesión.", Toast.LENGTH_SHORT).show();
                             }
-                        } else {
+                        }
+                        else {
                             // Si el inicio de sesión falla, muestra un mensaje al usuario
-                            Toast.makeText(LoginActivity2.this, "Error al iniciar sesión. No estás registrado.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity2.this, "Error al iniciar sesión. Por favor, asegúrate de que los datos sean válidos.", Toast.LENGTH_LONG).show();
                             updateUI2(null);
                         }
                     }

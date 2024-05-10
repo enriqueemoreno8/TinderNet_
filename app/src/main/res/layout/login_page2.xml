@@ -136,11 +136,12 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="300sp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="40sp"
             android:text="¿Te has olvidado de la contraseña?"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:clickable="true" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -183,14 +183,5 @@
                 android:text="Sign Up with Google" />
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20sp"
-            android:text="¿Te has olvidado de la contraseña?"
-            android:textAlignment="center" />
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
