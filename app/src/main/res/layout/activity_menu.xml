@@ -10,10 +10,27 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="65dp"
         android:background="@color/light_blue"
-        app:popupTheme="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator"
-        app:titleTextColor="@color/white" />
+        app:popupTheme="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp">
+
+        <!-- Agregamos un ImageView dentro del CardView -->
+        <ImageView
+            android:id="@+id/toolbar_image"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:src="@drawable/tindnet"
+            android:padding="5dp"/>
+    </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- Fragmento -->
     <fragment
@@ -29,8 +46,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_height="65dp"
+        android:background="@color/light_blue"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
 
 </LinearLayout>

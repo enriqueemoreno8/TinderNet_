@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-        initApp();
+        //initApp();
         setupSwitch();
 
         //Instanciación de FireBase
@@ -90,14 +90,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonSignInWithGoogle = findViewById(R.id.button4);
+        /*Button buttonSignInWithGoogle = findViewById(R.id.button4);
         buttonSignInWithGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Llama a la función para iniciar sesión con Google
                 beginGoogleSignIn();
             }
-        });
+        });*/
 
         // Crear una instancia de la solicitud de acceso con Google
         /*googleIdOption = new GetGoogleIdOption.Builder()
@@ -250,7 +250,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void initApp() {
+    /*private void initApp() {
         oneTapClient = Identity.getSignInClient(this);
         signUpRequest = BeginSignInRequest.builder()
                 .setPasswordRequestOptions(BeginSignInRequest.PasswordRequestOptions.builder().setSupported(false).build())
@@ -267,9 +267,9 @@ public class LoginActivity extends AppCompatActivity {
                 .requestIdToken("705075391017-o8jd9ciit2ao91oqp395a7p50vmkf0n9.apps.googleusercontent.com")
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-    }
+    }*/
 
-    private void beginGoogleSignIn() {
+    /*private void beginGoogleSignIn() {
         oneTapClient.beginSignIn(signUpRequest)
                 .addOnSuccessListener(new OnSuccessListener<BeginSignInResult>() {
                     @Override
@@ -330,7 +330,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No se pudo obtener el token de identificación de Google.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
 
     private void updateUI(FirebaseUser user) {
