@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardMaxElevation="6dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:id="@+id/kolodaImage"
+            android:layout_width="332dp"
+            android:layout_height="380dp"
+            android:background="@drawable/koloda_card_view_background"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
