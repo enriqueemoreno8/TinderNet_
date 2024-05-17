@@ -22,10 +22,4 @@
         android:icon="@drawable/perfilicon"
         android:title="Profile" />
 
-    <item
-        android:id="@+id/actionReload"
-        android:title=""
-        android:icon="@drawable/ic_reload"
-        app:showAsAction="always"/>
-
 </menu>

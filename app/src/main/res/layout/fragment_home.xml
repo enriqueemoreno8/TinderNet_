@@ -13,31 +13,55 @@
         android:layout_height="match_parent"
         app:koloda_card_layout="@layout/item_koloda" />
 
+    <!-- Botón "back" alineado a la izquierda -->
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_return"
+        android:contentDescription="@string/return_button_description" />
+
+    <!-- Layout para los botones "like", "save" y "dislike" centrados -->
     <LinearLayout
         android:id="@+id/buttonsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
+        <!-- Botón "dislike" -->
         <ImageButton
             android:id="@+id/dislike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="30dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_dislike"
             android:contentDescription="@string/dislike_button_description" />
 
+        <!-- Botón "save" -->
+        <ImageButton
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_save"
+            android:contentDescription="@string/save_button_description" />
 
+        <!-- Botón "like" -->
         <ImageButton
             android:id="@+id/like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:layout_weight="0.5"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_like"
             android:contentDescription="@string/like_button_description" />

@@ -6,4 +6,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="dislike_button_description">Botón de rechazo</string>
     <string name="like_button_description">Botón de me gusta</string>
+    <string name="save_button_description">Botón de guardar</string>
+    <string name="return_button_description">Botón de volver</string>
 </resources>

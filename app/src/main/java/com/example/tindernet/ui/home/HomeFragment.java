@@ -3,9 +3,7 @@ package com.example.tindernet.ui.home;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -18,10 +16,11 @@ import androidx.fragment.app.Fragment;
 import com.example.tindernet.KolodaSampleAdapter;
 import com.example.tindernet.R;
 import com.example.tindernet.databinding.FragmentHomeBinding;
+import com.yalantis.library.Koloda;
 import com.yalantis.library.KolodaListener;
 
 public class HomeFragment extends Fragment {
-
+    private int currentCardIndex = 0;
     private FragmentHomeBinding binding;
     private KolodaSampleAdapter adapter;
 
@@ -60,18 +59,18 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onNewTopCard(int position) {
-                Toast.makeText(getContext(), "New top card: " + position, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onCardSwipedLeft(int position) {
-                Toast.makeText(getContext(), "Card swiped left: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Dislike", Toast.LENGTH_SHORT).show();
                 cardsSwiped++;
             }
 
             @Override
             public void onCardSwipedRight(int position) {
-                Toast.makeText(getContext(), "Card swiped right: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Like", Toast.LENGTH_SHORT).show();
                 cardsSwiped++;
             }
 
@@ -87,27 +86,27 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onClickRight(int position) {
-                Toast.makeText(getContext(), "Card clicked right: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Like", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClickLeft(int position) {
-                Toast.makeText(getContext(), "Card clicked left: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Disike", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCardSingleTap(int position) {
-                Toast.makeText(getContext(), "Card single tap: " + position, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onCardLongPress(int position) {
-                Toast.makeText(getContext(), "Card long press: " + position, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onCardDoubleTap(int position) {
-                Toast.makeText(getContext(), "Card double tap: " + position, Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -129,26 +128,21 @@ public class HomeFragment extends Fragment {
                 binding.koloda.onClickLeft();
             }
         });
+
         binding.like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.koloda.onClickRight();
             }
         });
-    }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.bottom_nav_menu, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.actionReload) {
-            binding.koloda.reloadAdapterData();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        binding.save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Mostrar un Toast con el mensaje "Saved"
+                Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
